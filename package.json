@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "regression": "npx playwright test tests/specs/"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
