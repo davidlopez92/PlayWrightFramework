@@ -1,0 +1,18 @@
+{
+    "_id": "665e4d52ae2afd4c0bf005e6",
+    "product": {
+      "_id": "6581ca399fd99c85e8ee7f45",
+      "productName": "ZARA COAT 3",
+      "productCategory": "fashion",
+      "productSubCategory": "shirts",
+      "productPrice": 31500,
+      "productDescription": "Zara coat for Women and girls",
+      "productImage": "https://rahulshettyacademy.com/api/ecom/uploads/productImage_1650649434146.jpeg",
+      "productRating": "0",
+      "productTotalOrders": "0",
+      "productStatus": true,
+      "productFor": "women",
+      "productAddedBy": "admin@gmail.com",
+      "__v": 0
+    }
+}

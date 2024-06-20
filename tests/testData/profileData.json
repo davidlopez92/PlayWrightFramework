@@ -1,0 +1,8 @@
+{
+    "firstname": "David",
+    "lastname": "Lopez",  
+    "email" : "test001@yopmail.com",
+    "password": "Testing123.",
+    "passwordconfirmation": "Testing123.",
+    "invalidpassword" :  "holamundo"
+}
