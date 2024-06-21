@@ -11,7 +11,7 @@ test.describe('Profile regsitration, edit and sign in', ()=>{
     pm = new POManager(page);
     });
 
-    test('Create new customer account', async ({page}) => {
+    test.only('Create new customer account', async ({page}) => {
         await pm.homePage.clickCreateAccount();
         await pm.createAccount.createNewAccount();
         });
