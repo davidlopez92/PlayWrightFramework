@@ -8,7 +8,7 @@ class Login {
         this.customerLogin = page.locator('.base');
         this.createanAccount = page.locator('.primary').getByRole('link', {name: 'Create An Account'});
         this.email = page.locator('#email');
-        this.pass = page.locator('#pass').first();
+        this.pass = page.getByTitle('Password');
         this.signInButton = page.locator('#send2').first();
         this.welcome = page.getByText('Welcome, david lopez!').first();
         this.welcomeDropdown = page.locator('.action.switch').first();
