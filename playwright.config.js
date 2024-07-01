@@ -23,7 +23,7 @@ module.exports = defineConfig({
   use: {
 
     browserName: 'chromium',
-    headless: true,
+    headless: false,
     screenshot: 'on',
     trace: 'on'
 

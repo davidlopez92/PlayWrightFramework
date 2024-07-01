@@ -1,2 +1,0 @@
-[ 'Olivia 1/4 Zip Light Jacket', 'Juno Jacket' ]
-[ 'Juno Jacket', 'Olivia 1/4 Zip Light Jacket' ]

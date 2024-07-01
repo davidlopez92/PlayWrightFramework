@@ -7,6 +7,7 @@ class HomePage {
         this.signIn = page.getByRole('link', {name: 'Sign In'});
         this.welcome = page.getByText('Welcome, david lopez!').first();
         this.welcomeDropdown = page.locator('.action.switch').first();
+        this.myAccount = page.getByRole('link', {name: 'My Account'});
         this.signOut = page.getByRole('link', {name: 'sign out'});
         this.signOutMessage = page.locator('.base');
         this.women = page.locator('#ui-id-4');
@@ -39,6 +40,10 @@ class HomePage {
         await this.women.hover();
         await this.womenTops.hover();
         await this.womenTopsTees.click();
+    }
+    async clickMyAccount(){
+        await this.welcomeDropdown.click();
+        await this.myAccount.click();
     }
     async validateWelcomeUser(){
         await expect (this.welcome).toHaveText('Welcome, david lopez!');

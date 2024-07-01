@@ -1,8 +1,22 @@
 {
     "firstname": "David",
     "lastname": "Lopez",  
-    "email" : "test001@yopmail.com",
+    "email": "test001@yopmail.com",
     "password": "Testing123.",
     "passwordconfirmation": "Testing123.",
-    "invalidpassword" :  "holamundo"
+    "invalidpassword":  "holamundo",
+    "streetAddress": "Camino del Real 120" ,
+    "city": "Lagos",
+    "state": "Coahuila",
+    "postalCode": "12345",
+    "country": "Mexico",
+    "company": "Atlantic",
+    "phoneNumber": "5552314567",
+    "names": ["Juan", "Pedro", "Pepe", "Luis", "Manuel", "Jose", "Ricardo"],
+    "arrayLastNames": ["Rodriguez", "Pacheco", "Garcia", "Gutierrez", "Gonzalez", "Ruiz"],
+    "newCountry": "United States",
+    "newState" : "Texas",
+    "newCity": "San Antonio",
+    "newZip": "78230",
+    "newStreet": "Chittim 1490"
 }

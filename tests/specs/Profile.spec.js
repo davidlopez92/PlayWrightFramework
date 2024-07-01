@@ -2,7 +2,7 @@ const {test, expect} = require ('@playwright/test');
 const { POManager } = require('../pageObjects/POManager.js');
 const URL = JSON.parse(JSON.stringify(require("../testData/pageUrl.json")));
 
-test.describe('Profile regsitration, edit and sign in', ()=>{
+test.describe('Profile edit information', ()=>{
     let pm;
 
     test.beforeEach(async ({page})=>{
@@ -11,35 +11,46 @@ test.describe('Profile regsitration, edit and sign in', ()=>{
     pm = new POManager(page);
     });
 
-    test('Create new customer account', async ({page}) => {
+    test('Add address to new account', async () => {
         await pm.homePage.clickCreateAccount();
         await pm.createAccount.createNewAccount();
-        });
-
-    test('Create Account from Login page', async ({page})=>{
-        await pm.homePage.clickSignIn();
-        await pm.login.createAnAccount();
-        await pm.createAccount.createNewAccount();
+        await pm.homePage.clickMyAccount();
+        await pm.profile.validateMyAccountPage();
+        await pm.profile.clickManageAddressess();
+        await pm.profile.validateAddressPage();
+        await pm.profile.addNewAddress();
     });
 
-    test ('Validate wrong confirm password', async ({page})=> {
-        await pm.homePage.clickCreateAccount();
-        await pm.createAccount.wrongConfirmationPassword();
-    })
-
-    test('Validate existing email address', async ({page}) => {
-        await pm.homePage.clickCreateAccount();
-        await pm.createAccount.existingEmailAccount();
-    })
-
-    test ('Customer login successfuly', async ({page}) =>{
+    test('Edit first name and last name', async ()=>{
         await pm.login.logIn();
-    })
+        await pm.homePage.clickMyAccount();
+        await pm.profile.editNameAndLastName();
+        await pm.profile.saveAccountInformation();
+    });
 
-    test('Customer log out', async ({page}) => {
-        await pm.login.logOut();
-    })
+    test ('Edit profile address ', async ()=> {
+        await pm.homePage.clickCreateAccount();
+        await pm.createAccount.createNewAccount();
+        await pm.homePage.clickMyAccount();
+        await pm.profile.clickManageAddressess();
+        await pm.profile.addNewAddress();
+        await pm.profile.editAddress();
 
+    });
 
+    test('Validate placed orders', async () => {
+        await pm.login.logIn();
+        await pm.homePage.clickMyAccount();
+        await pm.profile.validateOrders();
 
-})
+    });
+
+    test ('Validate items in wish list', async () =>{
+        
+    });
+
+    test('Validate downloadable products', async ({page}) => {
+        
+    });
+
+});
