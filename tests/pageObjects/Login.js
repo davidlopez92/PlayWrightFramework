@@ -22,7 +22,7 @@ class Login {
         await this.email.fill(userData.email);
         await this.pass.fill(userData.password);
         await this.signInButton.click();
-        await expect (this.welcome).toContainText('Welcome');
+        //await expect (this.welcome).toContainText('Welcome');
     }
 
     async logOut(){

@@ -4,6 +4,7 @@ const { Login } = require('./Login');
 const { Profile } = require ('./Profile');
 const { Women } = require('./Women');
 const { ShoppingCart } = require('./ShoppingCart');
+const { GearItems } = require ('./GearItems');
 
 class POManager{
   constructor(page){
@@ -33,6 +34,9 @@ class POManager{
   }
   getShoppingCartPage(){
     return this.shoppingCart;
+  }
+  getGearItemsPage(){
+    return this.gearItems;
   }
 }
 module.exports = {POManager};

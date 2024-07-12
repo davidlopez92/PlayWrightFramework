@@ -38,19 +38,20 @@ test.describe('Profile edit information', ()=>{
 
     });
 
-    test('Validate placed orders', async () => {
+    test('Validate placed orders', async ({page}) => {
         await pm.login.logIn();
+        await pm.homePage.clickWomenTees();
+        await page.waitForLoadState('domcontentloaded');
+        await pm.women.addWomenTee();
+        await page.waitForLoadState('domcontentloaded');
+        const orderId = await pm.shoppingCart.createOrder();
         await pm.homePage.clickMyAccount();
-        await pm.profile.validateOrders();
+        await pm.profile.validateOrders(orderId);
 
     });
 
-    test ('Validate items in wish list', async () =>{
+    // test ('Validate items in wish list', async () =>{
         
-    });
-
-    test('Validate downloadable products', async ({page}) => {
-        
-    });
+    // });
 
 });

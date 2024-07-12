@@ -11,7 +11,7 @@ test.describe('Add products to shopping cart and checkout', ()=>{
     });
 
     test('Add different items to shopping cart', async ({page})=>{
-        await pm.homePage.clickJackets();
+        await pm.homePage.clickWomenJackets();
         await page.waitForLoadState('networkidle');
         await pm.women.selectColorBlue();
         const selectedProducts = await pm.women.womenProductsSelected();
@@ -20,4 +20,10 @@ test.describe('Add products to shopping cart and checkout', ()=>{
         const expectedProducts = await pm.shoppingCart.validateCartProducts();
         expect (selectedProducts.sort()).toEqual(expectedProducts.sort())
     });
+
+    test('Edit product quantity in shopping cart', async ({page})=>{
+        await pm.homePage.clickGearBags();
+        await pm.gearItems.
+    });
+
 });

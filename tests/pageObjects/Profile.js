@@ -24,8 +24,11 @@ class Profile {
         this.editInformation = page.getByRole('link', {name: 'Edit', exact: true} );
         this.saveInformation = page.locator('.save');
         this.changeAddress = page.locator('.action.edit').first();
-        this.myOrders = page.getByRole('link', {name:'My Orders'});
+        this.myOrders = page.locator('.nav,item').nth(2);
         this.ordersTable = page.locator('tbody tr');
+        this.orderNum = page.locator('.id');
+        this.viewOrder = page.locator('.action.view');
+        this.orderIdDetails = page.locator('.base');
     };
 
     async validateMyAccountPage(){
@@ -82,10 +85,16 @@ class Profile {
         await this.myOrders.click();
         const row = await this.ordersTable;
 
-        for(i=0; i<row.count(); ++i){
-
-
+        for(let i=0; i < await row.count(); ++i){
+            const rowOrderId = await row.nth(i).locator('.id').textContent();
+            if (orderID.includes(rowOrderId)){
+                await row.nth(i).locator('.action.view').click();
+                break;
+            }
         }
+        const orderDetails = await this.orderIdDetails.textContent();
+        console.log(orderDetails)
+        expect (orderDetails.includes(orderID)).toBeTruthy();
 
     }
     
