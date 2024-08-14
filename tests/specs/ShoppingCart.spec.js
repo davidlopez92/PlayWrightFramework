@@ -23,7 +23,7 @@ test.describe('Add products to shopping cart and checkout', ()=>{
 
     test('Edit product quantity in shopping cart', async ({page})=>{
         await pm.homePage.clickGearBags();
-        await pm.gearItems.
+        await pm.gearItems.addBag();
     });
 
 });

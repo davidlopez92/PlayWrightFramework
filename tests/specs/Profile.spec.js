@@ -6,9 +6,9 @@ test.describe('Profile edit information', ()=>{
     let pm;
 
     test.beforeEach(async ({page})=>{
-    await page.goto(URL.url);
-    await expect(page).toHaveTitle('Home Page');
-    pm = new POManager(page);
+        await page.goto(URL.url);
+        await expect(page).toHaveTitle('Home Page');
+        pm = new POManager(page);
     });
 
     test('Add address to new account', async () => {

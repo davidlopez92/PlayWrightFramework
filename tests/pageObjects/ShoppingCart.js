@@ -30,6 +30,7 @@ class ShoppingCart {
     async updateItemQty(){
         await this.cart.click();
         
+
     }
 
 }

@@ -1,0 +1,24 @@
+{
+    "name": "Tester",
+    "email": "testeo@yopmail.com",
+    "password": "testing123.",
+    "firstName": "Tester",
+    "lastName": "QA",
+    "company": "Pruebas",
+    "address": "123probando",
+    "country": [
+        "India",
+        "United States",
+        "Canada",
+        "Israel"
+    ],
+    "state": "ejemplo",
+    "city": "donde",
+    "zipcode": "123345",
+    "mobile": "8782746123",
+    "day": "3",
+    "month": "January",
+    "year": "2000",
+    "wrongPassword" : "incorrect",
+    "wrongEmail" : "wrooongemail@email.com"
+}
