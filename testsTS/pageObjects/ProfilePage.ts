@@ -30,6 +30,7 @@ export class ProfilePage {
     loggedSuccessful : Locator;
     logout : Locator;
     signupLogin : Locator;
+    existingEmailMessage : Locator;
 
     constructor(page:Page){
         this.name = page.getByPlaceholder("Name");
@@ -57,6 +58,8 @@ export class ProfilePage {
         this.loggedSuccessful = page.locator(".nav a b");
         this.logout = page.locator(".fa.fa-lock");
         this.signupLogin = page.locator("a[href='/login']");
+        this.existingEmailMessage = page.locator(".signup-form p");
+
     }
 
     async newUserSignUp(){
@@ -103,5 +106,12 @@ export class ProfilePage {
         await expect (this.loggedSuccessful).toHaveText(data.name);
         await this.logout.click();
         await expect(this.signupLogin).toHaveText(" Signup / Login");
+    }
+
+    async existingEmailSignup(){
+        await this.name.fill(data.name);
+        await this.email.nth(1).fill(data.email);
+        await this.signUpButton.click();
+        await expect(this.existingEmailMessage).toHaveText("Email Address already exist!");
     }
 }

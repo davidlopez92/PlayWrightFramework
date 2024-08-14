@@ -32,6 +32,7 @@ test.describe ('User sign up and login', ()=>{
     
     test('Register User with existing email', async ()=>{
         await pm.home.clickSignupLogin();
+        await pm.profilePage.existingEmailSignup();
     });
 
 
