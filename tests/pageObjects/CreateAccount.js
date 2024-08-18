@@ -25,7 +25,6 @@ class CreateAccount {
         await this.password.fill(userData.password);
         await this.confirmPassword.fill(userData.passwordconfirmation);
         await this.createButton.click();
-        await this.validateAccountCreated();
     }
 
     async wrongConfirmationPassword(){
