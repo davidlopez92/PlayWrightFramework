@@ -12,3 +12,12 @@ When("I create a new account", async function(){
 Then("I validate account is created", async function(){
     await this.pm.createAccount.validateAccountCreated();
 })
+
+When ("I login", async function(){
+    await this.pm.login.logIn();
+})
+
+Then ("I validate user logged in successfully", async function(){
+    await this.pm.login.validateLogIn();
+})
+

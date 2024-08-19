@@ -34,6 +34,7 @@ test.describe('Profile regsitration, edit and sign in', ()=>{
 
     test ('Customer login successfuly', async ({page}) =>{
         await pm.login.logIn();
+        await pm.login.validateLogIn();
     });
 
     test('Customer log out', async ({page}) => {
